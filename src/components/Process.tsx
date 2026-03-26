@@ -28,29 +28,29 @@ export function Process() {
   ];
 
   return (
-    <section id="process" className="py-32 bg-[#0d0e12] relative overflow-hidden">
+    <section id="process" className="py-20 md:py-32 bg-[#0d0e12] relative overflow-hidden">
       <div className="absolute top-0 right-0 w-full h-full bg-glow opacity-30 pointer-events-none" />
       
       <div className="container mx-auto px-6 relative z-10">
-        <div className="text-center mb-20">
-          <h2 className="font-headline font-bold text-4xl md:text-6xl mb-6">How it works</h2>
-          <p className="text-muted-foreground text-xl max-w-2xl mx-auto">
+        <div className="text-center mb-16 md:mb-20">
+          <h2 className="font-headline font-bold text-3xl md:text-6xl mb-6">How it works</h2>
+          <p className="text-muted-foreground text-lg md:text-xl max-w-2xl mx-auto">
             A simple, high-speed process designed to get your business online with zero headaches.
           </p>
         </div>
 
-        <div className="grid md:grid-cols-4 gap-12">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12 md:gap-12">
           {steps.map((step, index) => (
             <div key={index} className="relative group">
               {index < steps.length - 1 && (
-                <div className="hidden md:block absolute top-12 left-full w-full h-[2px] bg-gradient-to-r from-white/10 to-transparent z-0" />
+                <div className="hidden lg:block absolute top-12 left-full w-full h-[1px] bg-gradient-to-r from-white/10 to-transparent z-0" />
               )}
               <div className="relative z-10">
-                <div className="text-6xl font-headline font-bold text-white/5 mb-8 group-hover:text-primary/30 transition-all duration-700">
+                <div className="text-5xl md:text-6xl font-headline font-bold text-white/5 mb-6 md:mb-8 group-hover:text-primary/30 transition-all duration-700">
                   {step.num}
                 </div>
-                <h3 className="font-headline text-2xl font-bold mb-4">{step.title}</h3>
-                <p className="text-muted-foreground text-lg leading-relaxed">
+                <h3 className="font-headline text-xl md:text-2xl font-bold mb-4">{step.title}</h3>
+                <p className="text-muted-foreground text-base md:text-lg leading-relaxed">
                   {step.description}
                 </p>
               </div>

@@ -1,3 +1,4 @@
+
 "use client";
 
 import React from 'react';
@@ -31,21 +32,21 @@ export function Portfolio() {
   ];
 
   return (
-    <section id="portfolio" className="py-24 bg-background">
+    <section id="portfolio" className="py-20 md:py-24 bg-background">
       <div className="container mx-auto px-6">
-        <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-4">
+        <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 md:mb-16 gap-6">
           <div>
-            <h2 className="font-headline font-bold text-4xl md:text-5xl mb-4">Sample Work</h2>
-            <p className="text-muted-foreground text-lg max-w-xl">
+            <h2 className="font-headline font-bold text-3xl md:text-5xl mb-4">Sample Work</h2>
+            <p className="text-muted-foreground text-base md:text-lg max-w-xl">
               A collection of websites and tools built to deliver results and exceptional user experiences.
             </p>
           </div>
-          <div className="flex items-center gap-2 text-secondary font-medium cursor-pointer group">
+          <div className="flex items-center gap-2 text-secondary font-medium cursor-pointer group w-fit">
             View full portfolio <ArrowUpRight size={20} className="group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
           </div>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-10">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 md:gap-10">
           {projects.map((project, index) => (
             <div key={index} className="group cursor-pointer">
               <div className="relative aspect-[4/3] rounded-2xl overflow-hidden mb-6 border border-white/5 bg-muted/20">
@@ -69,8 +70,8 @@ export function Portfolio() {
                 </div>
               </div>
               <div className="space-y-2">
-                <p className="text-xs font-bold uppercase tracking-widest text-secondary">{project.category}</p>
-                <h3 className="font-headline text-2xl group-hover:text-primary transition-colors">{project.title}</h3>
+                <p className="text-[10px] font-bold uppercase tracking-widest text-secondary">{project.category}</p>
+                <h3 className="font-headline text-xl md:text-2xl group-hover:text-primary transition-colors">{project.title}</h3>
                 <p className="text-muted-foreground text-sm leading-relaxed">{project.description}</p>
               </div>
             </div>

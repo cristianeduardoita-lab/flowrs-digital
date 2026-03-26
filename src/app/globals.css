@@ -43,7 +43,7 @@
     @apply border-border;
   }
   body {
-    @apply bg-background text-foreground selection:bg-primary/30;
+    @apply bg-background text-foreground selection:bg-primary/30 overflow-x-hidden;
     font-feature-settings: "rlig" 1, "calt" 1;
   }
 }
@@ -62,4 +62,15 @@
 
 .bg-glow {
   background: radial-gradient(circle at center, hsla(212, 80%, 53%, 0.15) 0%, transparent 70%);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  @apply bg-background;
+}
+::-webkit-scrollbar-thumb {
+  @apply bg-white/10 rounded-full hover:bg-white/20 transition-colors;
 }

@@ -29,17 +29,17 @@ export function Navigation() {
   return (
     <nav
       className={cn(
-        'fixed top-0 left-0 right-0 z-50 transition-all duration-300 px-6 py-4',
-        isScrolled ? 'bg-background/80 backdrop-blur-md border-b border-white/5 py-3' : 'bg-transparent'
+        'fixed top-0 left-0 right-0 z-50 transition-all duration-300 px-4 md:px-6 py-4',
+        isScrolled ? 'bg-background/90 backdrop-blur-md border-b border-white/5 py-3' : 'bg-transparent'
       )}
     >
       <div className="max-w-7xl mx-auto flex items-center justify-between">
         <Link href="/" className="flex items-center gap-2 group">
-          <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-primary to-secondary flex items-center justify-center text-white font-bold text-lg shadow-lg shadow-primary/20 group-hover:scale-110 transition-transform">
+          <div className="w-8 h-8 md:w-9 md:h-9 rounded-lg bg-gradient-to-br from-primary to-secondary flex items-center justify-center text-white font-bold text-lg shadow-lg shadow-primary/20 group-hover:scale-110 transition-transform">
             F
           </div>
-          <span className="font-headline font-bold text-xl tracking-tight hidden sm:block">
-            Flowrs <span className="text-secondary">Digital</span>
+          <span className="font-headline font-bold text-lg md:text-xl tracking-tight">
+            Flowrs Digital <span className="text-secondary">Studio</span>
           </span>
         </Link>
 
@@ -61,27 +61,28 @@ export function Navigation() {
 
         {/* Mobile Toggle */}
         <button
-          className="md:hidden text-white"
+          className="md:hidden text-white p-2"
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+          aria-label="Toggle menu"
         >
-          {isMobileMenuOpen ? <X size={28} /> : <Menu size={28} />}
+          {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
         </button>
       </div>
 
       {/* Mobile Menu */}
       {isMobileMenuOpen && (
-        <div className="md:hidden absolute top-full left-0 right-0 bg-background/95 backdrop-blur-xl border-b border-white/10 p-6 flex flex-col gap-6 animate-in slide-in-from-top duration-300">
+        <div className="md:hidden absolute top-full left-0 right-0 bg-background/98 backdrop-blur-2xl border-b border-white/10 p-8 flex flex-col gap-6 animate-in slide-in-from-top duration-300 shadow-2xl">
           {navLinks.map((link) => (
             <Link
               key={link.name}
               href={link.href}
               onClick={() => setIsMobileMenuOpen(false)}
-              className="text-lg font-medium text-muted-foreground hover:text-white transition-colors"
+              className="text-xl font-medium text-muted-foreground hover:text-white transition-colors"
             >
               {link.name}
             </Link>
           ))}
-          <Button asChild className="w-full rounded-full font-bold" onClick={() => setIsMobileMenuOpen(false)}>
+          <Button asChild className="w-full h-14 rounded-full font-bold text-lg" onClick={() => setIsMobileMenuOpen(false)}>
             <Link href="#contact">Get My Website</Link>
           </Button>
         </div>
