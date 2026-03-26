@@ -24,6 +24,18 @@
       "description": "Abstract gradient background",
       "imageUrl": "https://picsum.photos/seed/glow/1200/800",
       "imageHint": "abstract gradient"
+    },
+    {
+      "id": "brand-logo",
+      "description": "Flowrs Digital Studio Logo",
+      "imageUrl": "https://placehold.co/400x400/2680e7/ffffff?text=F",
+      "imageHint": "company logo"
+    },
+    {
+      "id": "brand-favicon",
+      "description": "Flowrs Digital Studio Favicon",
+      "imageUrl": "https://placehold.co/32x32/2680e7/ffffff?text=F",
+      "imageHint": "favicon"
     }
   ]
 }
