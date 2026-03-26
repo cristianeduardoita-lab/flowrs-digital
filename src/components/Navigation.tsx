@@ -8,14 +8,12 @@ import { Menu, X, Globe } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { Button } from '@/components/ui/button';
 import { useLanguage } from '@/context/LanguageContext';
-import { PlaceHolderImages } from '@/lib/placeholder-images';
 
 export function Navigation() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [logoError, setLogoError] = useState(false);
   const { language, setLanguage, t } = useLanguage();
-
-  const logoData = PlaceHolderImages.find(img => img.id === 'brand-logo');
 
   useEffect(() => {
     const handleScroll = () => {
@@ -41,16 +39,21 @@ export function Navigation() {
     >
       <div className="max-w-7xl mx-auto flex items-center justify-between">
         <Link href="/" className="flex items-center gap-3 group transition-all">
-          <div className="relative h-8 w-8 md:h-10 md:w-10 group-hover:scale-110 transition-transform duration-300 rounded-lg overflow-hidden border border-white/10">
-            {logoData && (
+          <div className="relative h-8 w-8 md:h-10 md:w-10 group-hover:scale-110 transition-transform duration-300 rounded-lg overflow-hidden border border-white/10 bg-white/5">
+            {!logoError ? (
               <Image
-                src={logoData.imageUrl}
-                alt="Flowrs Digital Studio Logo"
+                src="/logo.png"
+                alt="Flowrs Digital Studio logo"
                 width={40}
                 height={40}
                 className="object-contain w-full h-full"
+                onError={() => setLogoError(true)}
                 priority
               />
+            ) : (
+              <div className="w-full h-full flex items-center justify-center bg-primary text-white font-bold text-lg">
+                F
+              </div>
             )}
           </div>
           <span className="font-headline font-bold text-lg md:text-xl tracking-tight hidden sm:inline-block">

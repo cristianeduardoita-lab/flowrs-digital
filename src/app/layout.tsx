@@ -2,9 +2,6 @@
 import type {Metadata} from 'next';
 import './globals.css';
 import { LanguageProvider } from '@/context/LanguageContext';
-import data from '@/app/lib/placeholder-images.json';
-
-const faviconData = data.placeholderImages.find(img => img.id === 'brand-favicon');
 
 export const metadata: Metadata = {
   title: 'Flowrs Digital Studio | Modern Web Development',
@@ -19,12 +16,8 @@ export default function RootLayout({
   return (
     <html lang="en" className="scroll-smooth">
       <head>
-        {faviconData && (
-          <>
-            <link rel="icon" type="image/png" href={faviconData.imageUrl} />
-            <link rel="apple-touch-icon" href={faviconData.imageUrl} />
-          </>
-        )}
+        <link rel="icon" type="image/png" href="/favicon.png" />
+        <link rel="apple-touch-icon" href="/favicon.png" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />

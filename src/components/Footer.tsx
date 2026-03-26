@@ -1,21 +1,19 @@
 
 "use client";
 
-import React from 'react';
+import React, { useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { Github, Twitter, Linkedin, Instagram, ArrowUp } from 'lucide-react';
 import { useLanguage } from '@/context/LanguageContext';
-import { PlaceHolderImages } from '@/lib/placeholder-images';
 
 export function Footer() {
+  const [logoError, setLogoError] = useState(false);
   const { t } = useLanguage();
   
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
-
-  const logoData = PlaceHolderImages.find(img => img.id === 'brand-logo');
 
   const navLinks = [
     { name: t('nav.services'), href: '#services' },
@@ -33,15 +31,20 @@ export function Footer() {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12 md:gap-16 mb-16 md:mb-24">
           <div className="sm:col-span-2 space-y-6 md:space-y-8">
             <Link href="/" className="flex items-center gap-3 group">
-              <div className="relative h-10 w-10 md:h-12 md:w-12 group-hover:scale-105 transition-transform duration-300 rounded-xl overflow-hidden border border-white/10">
-                {logoData && (
+              <div className="relative h-10 w-10 md:h-12 md:w-12 group-hover:scale-105 transition-transform duration-300 rounded-xl overflow-hidden border border-white/10 bg-white/5">
+                {!logoError ? (
                   <Image
-                    src={logoData.imageUrl}
-                    alt="Flowrs Digital Studio Logo"
+                    src="/logo.png"
+                    alt="Flowrs Digital Studio logo"
                     width={48}
                     height={48}
                     className="object-contain w-full h-full"
+                    onError={() => setLogoError(true)}
                   />
+                ) : (
+                  <div className="w-full h-full flex items-center justify-center bg-primary text-white font-bold text-xl">
+                    F
+                  </div>
                 )}
               </div>
               <span className="font-headline font-bold text-2xl md:text-3xl">

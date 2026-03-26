@@ -28,13 +28,13 @@
     {
       "id": "brand-logo",
       "description": "Flowrs Digital Studio Logo",
-      "imageUrl": "https://placehold.co/400x400/2680e7/ffffff?text=F",
+      "imageUrl": "/logo.png",
       "imageHint": "company logo"
     },
     {
       "id": "brand-favicon",
       "description": "Flowrs Digital Studio Favicon",
-      "imageUrl": "https://placehold.co/32x32/2680e7/ffffff?text=F",
+      "imageUrl": "/favicon.png",
       "imageHint": "favicon"
     }
   ]
