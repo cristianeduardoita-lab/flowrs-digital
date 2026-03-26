@@ -1,0 +1,29 @@
+
+{
+  "placeholderImages": [
+    {
+      "id": "portfolio-1",
+      "description": "English Learning Platform Demo",
+      "imageUrl": "https://picsum.photos/seed/learn/800/600",
+      "imageHint": "language learning"
+    },
+    {
+      "id": "portfolio-2",
+      "description": "Contractor Lead Generation Website",
+      "imageUrl": "https://picsum.photos/seed/build/800/600",
+      "imageHint": "construction contractor"
+    },
+    {
+      "id": "portfolio-3",
+      "description": "Computer Support & IT Services Page",
+      "imageUrl": "https://picsum.photos/seed/tech/800/600",
+      "imageHint": "computer repair"
+    },
+    {
+      "id": "hero-glow",
+      "description": "Abstract gradient background",
+      "imageUrl": "https://picsum.photos/seed/glow/1200/800",
+      "imageHint": "abstract gradient"
+    }
+  ]
+}

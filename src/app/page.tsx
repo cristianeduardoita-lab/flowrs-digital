@@ -1,3 +1,30 @@
+
+import { Navigation } from '@/components/Navigation';
+import { Hero } from '@/components/Hero';
+import { Services } from '@/components/Services';
+import { Portfolio } from '@/components/Portfolio';
+import { Process } from '@/components/Process';
+import { ProjectIdeaGenerator } from '@/components/ProjectIdeaGenerator';
+import { Benefits } from '@/components/Benefits';
+import { FAQ } from '@/components/FAQ';
+import { ContactForm } from '@/components/ContactForm';
+import { Footer } from '@/components/Footer';
+import { Toaster } from '@/components/ui/toaster';
+
 export default function Home() {
-  return <></>;
+  return (
+    <main className="min-h-screen selection:bg-primary/30">
+      <Navigation />
+      <Hero />
+      <Services />
+      <Portfolio />
+      <Process />
+      <ProjectIdeaGenerator />
+      <Benefits />
+      <FAQ />
+      <ContactForm />
+      <Footer />
+      <Toaster />
+    </main>
+  );
 }
