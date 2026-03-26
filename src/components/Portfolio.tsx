@@ -1,4 +1,3 @@
-
 "use client";
 
 import React from 'react';
@@ -11,22 +10,22 @@ export function Portfolio() {
     {
       title: "English Learning Demo",
       category: "Educational Web Tool",
-      image: PlaceHolderImages.find(img => img.id === 'portfolio-1')?.imageUrl || '',
-      hint: PlaceHolderImages.find(img => img.id === 'portfolio-1')?.imageHint || '',
+      image: PlaceHolderImages.find(img => img.id === 'portfolio-1')?.imageUrl,
+      hint: PlaceHolderImages.find(img => img.id === 'portfolio-1')?.imageHint || 'language learning',
       description: "Interactive language learning platform with progress tracking and quizzes."
     },
     {
       title: "Contractor Lead Website",
       category: "Local Business",
-      image: PlaceHolderImages.find(img => img.id === 'portfolio-2')?.imageUrl || '',
-      hint: PlaceHolderImages.find(img => img.id === 'portfolio-2')?.imageHint || '',
+      image: PlaceHolderImages.find(img => img.id === 'portfolio-2')?.imageUrl,
+      hint: PlaceHolderImages.find(img => img.id === 'portfolio-2')?.imageHint || 'construction contractor',
       description: "High-performance site for a construction firm focused on capturing inquiries."
     },
     {
       title: "Computer Support Page",
       category: "Service Provider",
-      image: PlaceHolderImages.find(img => img.id === 'portfolio-3')?.imageUrl || '',
-      hint: PlaceHolderImages.find(img => img.id === 'portfolio-3')?.imageHint || '',
+      image: PlaceHolderImages.find(img => img.id === 'portfolio-3')?.imageUrl,
+      hint: PlaceHolderImages.find(img => img.id === 'portfolio-3')?.imageHint || 'computer repair',
       description: "Modern landing page for tech support services with automated booking."
     }
   ];
@@ -49,14 +48,20 @@ export function Portfolio() {
         <div className="grid md:grid-cols-3 gap-10">
           {projects.map((project, index) => (
             <div key={index} className="group cursor-pointer">
-              <div className="relative aspect-[4/3] rounded-2xl overflow-hidden mb-6 border border-white/5">
-                <Image
-                  src={project.image}
-                  alt={project.title}
-                  fill
-                  className="object-cover transition-transform duration-700 group-hover:scale-110"
-                  data-ai-hint={project.hint}
-                />
+              <div className="relative aspect-[4/3] rounded-2xl overflow-hidden mb-6 border border-white/5 bg-muted/20">
+                {project.image ? (
+                  <Image
+                    src={project.image}
+                    alt={project.title}
+                    fill
+                    className="object-cover transition-transform duration-700 group-hover:scale-110"
+                    data-ai-hint={project.hint}
+                  />
+                ) : (
+                  <div className="absolute inset-0 flex items-center justify-center text-muted-foreground text-sm">
+                    Preview Image Missing
+                  </div>
+                )}
                 <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end p-6">
                   <div className="w-12 h-12 rounded-full bg-white text-background flex items-center justify-center">
                     <ExternalLink size={24} />
