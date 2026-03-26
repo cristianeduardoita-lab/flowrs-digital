@@ -67,7 +67,7 @@ const translations: Record<Language, any> = {
       subheadline: 'Clean, modern websites designed to help your business look professional and generate more calls, messages, and customers.',
       primaryCta: 'Get My Website',
       secondaryCta: 'View Sample Work',
-      pricing: 'Starting from $149 • Fast delivery • English / Spanish',
+      pricing: '$99 one-time • Fast delivery • English / Spanish',
       target: 'Perfect for contractors, cleaners, small businesses, and local services.',
       features: ['MODERN DESIGN', 'FAST DELIVERY', 'PREMIUM UX', 'LEAD FOCUSED'],
     },
@@ -128,7 +128,7 @@ const translations: Record<Language, any> = {
           description: "I build the first version of your site in days, not weeks, so you can see results fast."
         },
         {
-          title: "Refine & Polished",
+          title: "Refine & Polish",
           description: "We tweak the design and content until it perfectly represents your brand."
         },
         {
@@ -157,7 +157,7 @@ const translations: Record<Language, any> = {
         {
           name: "Website Starter",
           price: "99",
-          period: "once",
+          period: "one-time",
           features: ["Modern one-page website", "Mobile-friendly design", "Contact section", "Fast setup"]
         },
         {
@@ -241,7 +241,7 @@ const translations: Record<Language, any> = {
       subheadline: 'Sitios web limpios y modernos diseñados para que tu negocio se vea profesional y genere más llamadas, mensajes y clientes.',
       primaryCta: 'Obtener Mi Web',
       secondaryCta: 'Ver Portafolio',
-      pricing: 'Desde $149 • Entrega rápida • Inglés / Español',
+      pricing: '$99 pago único • Entrega rápida • Inglés / Español',
       target: 'Ideal para contratistas, servicios de limpieza, pequeñas empresas y negocios locales.',
       features: ['DISEÑO MODERNO', 'ENTREGA RÁPIDA', 'UX PREMIUM', 'ENFOQUE EN VENTAS'],
     },
@@ -302,7 +302,7 @@ const translations: Record<Language, any> = {
           description: "Construyo la primera versión de tu sitio en días, no semanas, para ver resultados pronto."
         },
         {
-          title: "Refinado y Pulido",
+          title: "Refinar y Pulir",
           description: "Ajustamos el diseño y el contenido hasta que represente perfectamente a tu marca."
         },
         {

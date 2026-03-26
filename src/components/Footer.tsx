@@ -19,7 +19,7 @@ export function Footer() {
     { name: t('nav.portfolio'), href: '#portfolio' },
     { name: t('nav.process'), href: '#process' },
     { name: t('nav.faq'), href: '#faq' },
-    { name: t('nav.cta').split(' ')[0], href: '#contact' }
+    { name: t('nav.cta'), href: '#contact' }
   ];
 
   return (

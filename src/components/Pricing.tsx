@@ -46,7 +46,7 @@ export function Pricing() {
                 <CardTitle className="font-headline text-xl mb-2 opacity-80">{plan.name}</CardTitle>
                 <div className="flex items-baseline gap-1">
                   <span className="text-4xl md:text-5xl font-bold font-headline">${plan.price}</span>
-                  <span className="text-muted-foreground text-sm font-medium">/{plan.period === 'once' ? 'pago único' : plan.period}</span>
+                  <span className="text-muted-foreground text-sm font-medium">/{plan.period}</span>
                 </div>
               </CardHeader>
 
