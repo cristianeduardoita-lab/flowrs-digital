@@ -1,4 +1,3 @@
-
 "use client";
 
 import React, { createContext, useContext, useState, useEffect } from 'react';
@@ -181,19 +180,6 @@ const translations: Record<Language, any> = {
         successAction: "Send another message"
       }
     },
-    ideaGenerator: {
-      badge: "AI Powered Concept Lab",
-      title: "Not sure what you need?",
-      desc: "Input your business details and our AI will suggest high-impact features specifically for you.",
-      labelBusiness: "Business Type",
-      labelGoals: "Primary Goals",
-      placeholderBusiness: "e.g. Local Pizza Shop, Yoga Instructor",
-      placeholderGoals: "e.g. Get more phone calls, showcase student work",
-      button: "Generate Ideas",
-      placeholderResult: "Your AI suggestions will appear here",
-      loading: "Consulting the digital oracle...",
-      why: "Why"
-    },
     footer: {
       tagline: "Helping local businesses and entrepreneurs establish a premium digital presence that drives real results.",
       navTitle: "Navigation",
@@ -329,19 +315,6 @@ const translations: Record<Language, any> = {
         successDesc: "Gracias por contactar a Flowrs Digital Studio. Revisaré tus detalles y te contactaré muy pronto.",
         successAction: "Enviar otro mensaje"
       }
-    },
-    ideaGenerator: {
-      badge: "Laboratorio de Conceptos con IA",
-      title: "¿No estás seguro de qué necesitas?",
-      desc: "Ingresa los detalles de tu negocio y nuestra IA sugerirá funciones de alto impacto para ti.",
-      labelBusiness: "Tipo de Negocio",
-      labelGoals: "Objetivos Principales",
-      placeholderBusiness: "ej. Pizzería Local, Instructor de Yoga",
-      placeholderGoals: "ej. Recibir más llamadas, mostrar portafolio",
-      button: "Generar Ideas",
-      placeholderResult: "Tus sugerencias aparecerán aquí",
-      loading: "Consultando al oráculo digital...",
-      why: "Por qué"
     },
     footer: {
       tagline: "Ayudando a negocios locales y emprendedores a establecer una presencia digital premium que impulsa resultados.",

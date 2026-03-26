@@ -1,4 +1,1 @@
-import { config } from 'dotenv';
-config();
-
-import '@/ai/flows/ai-website-feature-suggester.ts';
+// AI dev entry point removed

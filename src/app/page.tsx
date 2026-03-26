@@ -1,10 +1,8 @@
-
 import { Navigation } from '@/components/Navigation';
 import { Hero } from '@/components/Hero';
 import { Services } from '@/components/Services';
 import { Portfolio } from '@/components/Portfolio';
 import { Process } from '@/components/Process';
-import { ProjectIdeaGenerator } from '@/components/ProjectIdeaGenerator';
 import { Benefits } from '@/components/Benefits';
 import { FAQ } from '@/components/FAQ';
 import { ContactForm } from '@/components/ContactForm';
@@ -19,7 +17,6 @@ export default function Home() {
       <Services />
       <Portfolio />
       <Process />
-      <ProjectIdeaGenerator />
       <Benefits />
       <FAQ />
       <ContactForm />
