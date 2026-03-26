@@ -7,17 +7,18 @@ import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Send, CheckCircle } from 'lucide-react';
 import { toast } from '@/hooks/use-toast';
+import { useLanguage } from '@/context/LanguageContext';
 
 export function ContactForm() {
   const [isSubmitted, setIsSubmitted] = React.useState(false);
+  const { t } = useLanguage();
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // Simulate form submission
     setIsSubmitted(true);
     toast({
-      title: "Inquiry Sent!",
-      description: "I'll get back to you within 24 hours.",
+      title: t('contact.form.successTitle'),
+      description: t('contact.form.successDesc'),
     });
   };
 
@@ -29,12 +30,12 @@ export function ContactForm() {
             <div className="w-16 h-16 md:w-24 md:h-24 bg-secondary/20 text-secondary rounded-full flex items-center justify-center mx-auto mb-8 md:mb-10">
               <CheckCircle className="w-8 h-8 md:w-12 md:h-12" />
             </div>
-            <h2 className="font-headline font-bold text-3xl md:text-5xl mb-6">Message Received!</h2>
+            <h2 className="font-headline font-bold text-3xl md:text-5xl mb-6">{t('contact.form.successTitle')}</h2>
             <p className="text-muted-foreground text-lg md:text-xl mb-10 leading-relaxed">
-              Thank you for reaching out to Flowrs Digital Studio. I'll review your project details and contact you very soon.
+              {t('contact.form.successDesc')}
             </p>
             <Button onClick={() => setIsSubmitted(false)} variant="outline" className="rounded-full h-14 px-8 font-bold">
-              Send another message
+              {t('contact.form.successAction')}
             </Button>
           </div>
         </div>
@@ -49,30 +50,27 @@ export function ContactForm() {
       <div className="container mx-auto px-6">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-start">
           <div>
-            <h2 className="font-headline font-bold text-3xl md:text-7xl mb-6 md:mb-8 leading-tight">Let's build <span className="text-gradient">something great.</span></h2>
+            <h2 className="font-headline font-bold text-3xl md:text-7xl mb-6 md:mb-8 leading-tight">
+              {t('contact.title').split(' ').map((word: string, i: number, arr: string[]) => 
+                i >= arr.length - 2 ? <span key={i} className="text-gradient"> {word}</span> : i === 0 ? word : ` ${word}`
+              )}
+            </h2>
             <p className="text-muted-foreground text-lg md:text-xl mb-10 md:mb-12 leading-relaxed">
-              Ready to take your business to the next level? Fill out the form below and I'll get back to you with a professional plan.
+              {t('contact.desc')}
             </p>
             
             <div className="space-y-8 md:space-y-10">
-              <div className="flex gap-6 md:gap-8 group">
-                <div className="w-12 h-12 md:w-14 md:h-14 rounded-full bg-white/5 border border-white/10 flex items-center justify-center shrink-0 group-hover:bg-primary/20 transition-colors">
-                  <span className="text-secondary font-bold text-lg md:text-xl">1</span>
+              {t('contact.steps').map((step: any, idx: number) => (
+                <div key={idx} className="flex gap-6 md:gap-8 group">
+                  <div className="w-12 h-12 md:w-14 md:h-14 rounded-full bg-white/5 border border-white/10 flex items-center justify-center shrink-0 group-hover:bg-primary/20 transition-colors">
+                    <span className="text-secondary font-bold text-lg md:text-xl">{idx + 1}</span>
+                  </div>
+                  <div>
+                    <h4 className="font-bold text-xl md:text-2xl mb-1 md:mb-2">{step.title}</h4>
+                    <p className="text-muted-foreground text-base md:text-lg">{step.desc}</p>
+                  </div>
                 </div>
-                <div>
-                  <h4 className="font-bold text-xl md:text-2xl mb-1 md:mb-2">Expert Consultation</h4>
-                  <p className="text-muted-foreground text-base md:text-lg">Free 15-minute discovery call to explore your project and goals.</p>
-                </div>
-              </div>
-              <div className="flex gap-6 md:gap-8 group">
-                <div className="w-12 h-12 md:w-14 md:h-14 rounded-full bg-white/5 border border-white/10 flex items-center justify-center shrink-0 group-hover:bg-primary/20 transition-colors">
-                  <span className="text-secondary font-bold text-lg md:text-xl">2</span>
-                </div>
-                <div>
-                  <h4 className="font-bold text-xl md:text-2xl mb-1 md:mb-2">Fast Proposals</h4>
-                  <p className="text-muted-foreground text-base md:text-lg">Receive a detailed quote and timeline within 24 hours of our talk.</p>
-                </div>
-              </div>
+              ))}
             </div>
           </div>
 
@@ -81,24 +79,24 @@ export function ContactForm() {
             <form onSubmit={handleSubmit} className="space-y-6 md:space-y-8">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
                 <div className="space-y-2 md:space-y-3">
-                  <label className="text-[10px] md:text-xs font-bold uppercase tracking-widest text-muted-foreground ml-1">Name</label>
-                  <Input placeholder="John Doe" required className="bg-white/5 border-white/10 h-12 md:h-14 text-sm md:text-base focus:ring-primary/50" />
+                  <label className="text-[10px] md:text-xs font-bold uppercase tracking-widest text-muted-foreground ml-1">{t('contact.form.name')}</label>
+                  <Input placeholder={t('contact.form.placeholderName')} required className="bg-white/5 border-white/10 h-12 md:h-14 text-sm md:text-base focus:ring-primary/50" />
                 </div>
                 <div className="space-y-2 md:space-y-3">
-                  <label className="text-[10px] md:text-xs font-bold uppercase tracking-widest text-muted-foreground ml-1">Email</label>
+                  <label className="text-[10px] md:text-xs font-bold uppercase tracking-widest text-muted-foreground ml-1">{t('contact.form.email')}</label>
                   <Input type="email" placeholder="john@example.com" required className="bg-white/5 border-white/10 h-12 md:h-14 text-sm md:text-base focus:ring-primary/50" />
                 </div>
               </div>
               <div className="space-y-2 md:space-y-3">
-                <label className="text-[10px] md:text-xs font-bold uppercase tracking-widest text-muted-foreground ml-1">Business Type</label>
-                <Input placeholder="e.g. Local Restaurant, Contractor" required className="bg-white/5 border-white/10 h-12 md:h-14 text-sm md:text-base focus:ring-primary/50" />
+                <label className="text-[10px] md:text-xs font-bold uppercase tracking-widest text-muted-foreground ml-1">{t('contact.form.businessType')}</label>
+                <Input placeholder={t('contact.form.placeholderBusiness')} required className="bg-white/5 border-white/10 h-12 md:h-14 text-sm md:text-base focus:ring-primary/50" />
               </div>
               <div className="space-y-2 md:space-y-3">
-                <label className="text-[10px] md:text-xs font-bold uppercase tracking-widest text-muted-foreground ml-1">How can I help?</label>
-                <Textarea placeholder="Tell me about your vision..." required className="bg-white/5 border-white/10 min-h-[140px] md:min-h-[160px] text-sm md:text-base focus:ring-primary/50" />
+                <label className="text-[10px] md:text-xs font-bold uppercase tracking-widest text-muted-foreground ml-1">{t('contact.form.help')}</label>
+                <Textarea placeholder={t('contact.form.placeholderHelp')} required className="bg-white/5 border-white/10 min-h-[140px] md:min-h-[160px] text-sm md:text-base focus:ring-primary/50" />
               </div>
               <Button type="submit" className="w-full h-14 md:h-16 rounded-2xl text-lg md:text-xl font-bold gap-3 group">
-                Send Inquiry <Send size={20} className="group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
+                {t('contact.form.submit')} <Send size={20} className="group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
               </Button>
             </form>
           </div>

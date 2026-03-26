@@ -4,12 +4,22 @@
 import React from 'react';
 import Link from 'next/link';
 import { Github, Twitter, Linkedin, Instagram, ArrowUp } from 'lucide-react';
-import { Button } from './ui/button';
+import { useLanguage } from '@/context/LanguageContext';
 
 export function Footer() {
+  const { t } = useLanguage();
+  
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
+
+  const navLinks = [
+    { name: t('nav.services'), href: '#services' },
+    { name: t('nav.portfolio'), href: '#portfolio' },
+    { name: t('nav.process'), href: '#process' },
+    { name: t('nav.faq'), href: '#faq' },
+    { name: t('nav.cta').split(' ')[0], href: '#contact' }
+  ];
 
   return (
     <footer className="bg-[#0a0b0e] pt-20 md:pt-32 pb-12 md:pb-16 border-t border-white/5 relative overflow-hidden">
@@ -27,7 +37,7 @@ export function Footer() {
               </span>
             </Link>
             <p className="text-muted-foreground text-lg md:text-xl max-w-sm leading-relaxed">
-              Helping local businesses and entrepreneurs establish a premium digital presence that drives real results.
+              {t('footer.tagline')}
             </p>
             <div className="flex items-center gap-4 md:gap-5">
               <Link href="#" className="w-10 h-10 md:w-12 md:h-12 rounded-full bg-white/5 flex items-center justify-center hover:bg-primary/30 transition-all text-white hover:scale-110">
@@ -46,12 +56,12 @@ export function Footer() {
           </div>
 
           <div>
-            <h4 className="font-headline font-bold text-lg md:text-xl mb-6 md:mb-8">Navigation</h4>
+            <h4 className="font-headline font-bold text-lg md:text-xl mb-6 md:mb-8">{t('footer.navTitle')}</h4>
             <ul className="space-y-4 md:space-y-5">
-              {['Services', 'Portfolio', 'Process', 'FAQ', 'Contact'].map((item) => (
-                <li key={item}>
-                  <Link href={`#${item.toLowerCase()}`} className="text-muted-foreground hover:text-white transition-colors text-base md:text-lg">
-                    {item}
+              {navLinks.map((link) => (
+                <li key={link.name}>
+                  <Link href={link.href} className="text-muted-foreground hover:text-white transition-colors text-base md:text-lg">
+                    {link.name}
                   </Link>
                 </li>
               ))}
@@ -59,19 +69,19 @@ export function Footer() {
           </div>
 
           <div>
-            <h4 className="font-headline font-bold text-lg md:text-xl mb-6 md:mb-8">Contact</h4>
+            <h4 className="font-headline font-bold text-lg md:text-xl mb-6 md:mb-8">{t('footer.contactTitle')}</h4>
             <ul className="space-y-4 md:space-y-5 text-muted-foreground text-base md:text-lg">
               <li className="hover:text-white transition-colors cursor-pointer break-all">hello@flowrs.digital</li>
               <li className="hover:text-white transition-colors cursor-pointer">+1 (555) 123-4567</li>
-              <li>Available 9AM - 6PM EST</li>
-              <li className="text-secondary font-bold">Bilingual Support</li>
+              <li>{t('footer.available')}</li>
+              <li className="text-secondary font-bold">{t('footer.support')}</li>
             </ul>
           </div>
         </div>
 
         <div className="flex flex-col md:flex-row items-center justify-between pt-8 md:pt-12 border-t border-white/5 gap-6 md:gap-8">
           <p className="text-muted-foreground text-sm md:text-base text-center md:text-left order-2 md:order-1">
-            © {new Date().getFullYear()} Flowrs Digital Studio. Built for growth.
+            © {new Date().getFullYear()} Flowrs Digital Studio.
           </p>
           <div className="flex flex-wrap justify-center gap-6 md:gap-10 text-sm md:text-base text-muted-foreground order-1 md:order-2">
             <Link href="#" className="hover:text-white transition-colors">Privacy</Link>
@@ -80,7 +90,7 @@ export function Footer() {
               onClick={scrollToTop}
               className="group flex items-center gap-2 hover:text-white transition-colors font-bold"
             >
-              Back to top <ArrowUp size={16} className="group-hover:-translate-y-1 transition-transform" />
+              {t('footer.backToTop')} <ArrowUp size={16} className="group-hover:-translate-y-1 transition-transform" />
             </button>
           </div>
         </div>

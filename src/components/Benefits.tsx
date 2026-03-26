@@ -3,35 +3,22 @@
 
 import React from 'react';
 import { ShieldCheck, Smartphone, Zap, MessageSquare, PlusCircle } from 'lucide-react';
+import { useLanguage } from '@/context/LanguageContext';
 
 export function Benefits() {
-  const benefits = [
-    {
-      icon: <ShieldCheck className="text-primary" />,
-      title: "Premium Visual Style",
-      desc: "Modern, high-end design that builds instant credibility and trust with your customers."
-    },
-    {
-      icon: <Smartphone className="text-secondary" />,
-      title: "Mobile-First Design",
-      desc: "Your site will look and work perfectly on every device, especially phones."
-    },
-    {
-      icon: <MessageSquare className="text-accent" />,
-      title: "Bilingual Support",
-      desc: "Full English and Spanish communication and content creation for your brand."
-    },
-    {
-      icon: <Zap className="text-primary" />,
-      title: "Fast Turnaround",
-      desc: "Get your digital presence launched in as little as 48 hours."
-    },
-    {
-      icon: <PlusCircle className="text-secondary" />,
-      title: "Scalable Tech",
-      desc: "Built with modern frameworks that grow as your business grows."
-    }
+  const { t } = useLanguage();
+  const icons = [
+    <ShieldCheck key="1" className="text-primary" />,
+    <Smartphone key="2" className="text-secondary" />,
+    <MessageSquare key="3" className="text-accent" />,
+    <Zap key="4" className="text-primary" />,
+    <PlusCircle key="5" className="text-secondary" />
   ];
+
+  const benefits = t('benefits.items').map((b: any, i: number) => ({
+    ...b,
+    icon: icons[i]
+  }));
 
   return (
     <section className="py-20 md:py-32 bg-background">
@@ -39,13 +26,15 @@ export function Benefits() {
         <div className="grid lg:grid-cols-2 gap-16 lg:gap-20 items-center">
           <div>
             <h2 className="font-headline font-bold text-3xl md:text-6xl mb-6 md:mb-8 leading-tight">
-              Why <span className="text-gradient">Flowrs Digital?</span>
+              {t('benefits.title').split(' ').map((word: string, i: number) => 
+                word === 'Digital?' ? <span key={i} className="text-gradient"> Digital?</span> : i === 0 ? word : ` ${word}`
+              )}
             </h2>
             <p className="text-muted-foreground text-lg md:text-xl mb-10 md:mb-12 leading-relaxed">
-              I specialize in helping local businesses bridge the gap between their physical work and their digital presentation.
+              {t('benefits.desc')}
             </p>
             <div className="space-y-6 md:space-y-8">
-              {benefits.map((benefit, idx) => (
+              {benefits.map((benefit: any, idx: number) => (
                 <div key={idx} className="flex gap-4 md:gap-6 group">
                   <div className="mt-1 p-2.5 md:p-3 rounded-xl bg-white/5 group-hover:bg-primary/20 group-hover:scale-110 transition-all duration-300">
                     {React.cloneElement(benefit.icon as React.ReactElement, { size: 20 })}
