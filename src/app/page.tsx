@@ -4,9 +4,11 @@ import { Services } from '@/components/Services';
 import { Portfolio } from '@/components/Portfolio';
 import { Process } from '@/components/Process';
 import { Benefits } from '@/components/Benefits';
+import { Pricing } from '@/components/Pricing';
 import { FAQ } from '@/components/FAQ';
 import { ContactForm } from '@/components/ContactForm';
 import { Footer } from '@/components/Footer';
+import { WhatsAppButton } from '@/components/WhatsAppButton';
 import { Toaster } from '@/components/ui/toaster';
 
 export default function Home() {
@@ -18,9 +20,11 @@ export default function Home() {
       <Portfolio />
       <Process />
       <Benefits />
+      <Pricing />
       <FAQ />
       <ContactForm />
       <Footer />
+      <WhatsAppButton />
       <Toaster />
     </main>
   );

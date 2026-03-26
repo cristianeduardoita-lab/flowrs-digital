@@ -148,6 +148,39 @@ const translations: Record<Language, any> = {
         { title: "Scalable Tech", desc: "Built with modern frameworks that grow as your business grows." }
       ]
     },
+    pricing: {
+      title: "Simple pricing to get your business online",
+      subtitle: "Start fast and grow with flexible monthly support",
+      cta: "Choose Plan",
+      recommended: "Recommended",
+      plans: [
+        {
+          name: "Website Starter",
+          price: "99",
+          period: "once",
+          features: ["Modern one-page website", "Mobile-friendly design", "Contact section", "Fast setup"]
+        },
+        {
+          name: "Monthly Basic",
+          price: "29",
+          period: "month",
+          features: ["Hosting", "Small updates", "Basic support"]
+        },
+        {
+          name: "Monthly Growth",
+          price: "49",
+          period: "month",
+          highlight: true,
+          features: ["Everything in Basic", "Monthly improvements", "Content updates", "Optimization"]
+        },
+        {
+          name: "Monthly Pro",
+          price: "79",
+          period: "month",
+          features: ["Everything in Growth", "Simple performance reports", "Priority support", "Continuous improvements"]
+        }
+      ]
+    },
     faq: {
       title: 'Questions?',
       desc: 'Everything you need to know about starting your project.',
@@ -179,6 +212,9 @@ const translations: Record<Language, any> = {
         successDesc: "Thank you for reaching out to Flowrs Digital Studio. I'll review your project details and contact you very soon.",
         successAction: "Send another message"
       }
+    },
+    whatsapp: {
+      message: "Hi, I'm interested in getting a website for my business."
     },
     footer: {
       tagline: "Helping local businesses and entrepreneurs establish a premium digital presence that drives real results.",
@@ -284,6 +320,39 @@ const translations: Record<Language, any> = {
         { title: "Tecnología Escalable", desc: "Construido con frameworks modernos que crecen con tu negocio." }
       ]
     },
+    pricing: {
+      title: "Precios simples para poner tu negocio en línea",
+      subtitle: "Empieza rápido y crece con soporte mensual flexible",
+      cta: "Elegir Plan",
+      recommended: "Recomendado",
+      plans: [
+        {
+          name: "Website Starter",
+          price: "99",
+          period: "pago único",
+          features: ["Web moderna de una página", "Diseño para móviles", "Sección de contacto", "Configuración rápida"]
+        },
+        {
+          name: "Plan Básico",
+          price: "29",
+          period: "mes",
+          features: ["Alojamiento (Hosting)", "Pequeñas actualizaciones", "Soporte básico"]
+        },
+        {
+          name: "Plan Crecimiento",
+          price: "49",
+          period: "mes",
+          highlight: true,
+          features: ["Todo lo del Básico", "Mejoras mensuales", "Actualización de contenido", "Optimización"]
+        },
+        {
+          name: "Plan Pro",
+          price: "79",
+          period: "mes",
+          features: ["Todo lo de Crecimiento", "Reportes de rendimiento", "Soporte prioritario", "Mejoras continuas"]
+        }
+      ]
+    },
     faq: {
       title: '¿Dudas?',
       desc: 'Todo lo que necesitas saber antes de comenzar tu proyecto.',
@@ -315,6 +384,9 @@ const translations: Record<Language, any> = {
         successDesc: "Gracias por contactar a Flowrs Digital Studio. Revisaré tus detalles y te contactaré muy pronto.",
         successAction: "Enviar otro mensaje"
       }
+    },
+    whatsapp: {
+      message: "Hola, estoy interesado en obtener un sitio web para mi negocio."
     },
     footer: {
       tagline: "Ayudando a negocios locales y emprendedores a establecer una presencia digital premium que impulsa resultados.",
