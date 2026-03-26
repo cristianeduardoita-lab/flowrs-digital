@@ -3,8 +3,8 @@ import type {Metadata} from 'next';
 import './globals.css';
 
 export const metadata: Metadata = {
-  title: 'Cristian Digital Studio | Modern Web Development',
-  description: 'Premium web development services for small businesses and entrepreneurs. Websites, landing pages, and custom digital tools.',
+  title: 'Flowrs Digital Studio | Modern Web Development',
+  description: 'Premium lead-generation websites for small businesses and local services. Get more calls and customers with a professional digital presence.',
 };
 
 export default function RootLayout({

@@ -36,10 +36,10 @@ export function Navigation() {
       <div className="max-w-7xl mx-auto flex items-center justify-between">
         <Link href="/" className="flex items-center gap-2 group">
           <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-primary to-secondary flex items-center justify-center text-white font-bold text-lg shadow-lg shadow-primary/20 group-hover:scale-110 transition-transform">
-            C
+            F
           </div>
           <span className="font-headline font-bold text-xl tracking-tight hidden sm:block">
-            Cristian <span className="text-secondary">Digital</span>
+            Flowrs <span className="text-secondary">Digital</span>
           </span>
         </Link>
 
@@ -54,8 +54,8 @@ export function Navigation() {
               {link.name}
             </Link>
           ))}
-          <Button asChild variant="default" className="rounded-full px-6">
-            <Link href="#contact">Contact Me</Link>
+          <Button asChild variant="default" className="rounded-full px-6 font-bold">
+            <Link href="#contact">Get My Website</Link>
           </Button>
         </div>
 
@@ -81,8 +81,8 @@ export function Navigation() {
               {link.name}
             </Link>
           ))}
-          <Button asChild className="w-full rounded-full" onClick={() => setIsMobileMenuOpen(false)}>
-            <Link href="#contact">Contact Me</Link>
+          <Button asChild className="w-full rounded-full font-bold" onClick={() => setIsMobileMenuOpen(false)}>
+            <Link href="#contact">Get My Website</Link>
           </Button>
         </div>
       )}

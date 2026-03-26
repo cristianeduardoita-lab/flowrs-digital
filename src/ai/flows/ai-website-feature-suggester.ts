@@ -1,3 +1,4 @@
+
 'use server';
 /**
  * @fileOverview An AI agent that suggests website features based on business type and goals.
@@ -45,7 +46,7 @@ Consider features that help the business:
 - Generate more leads or sales
 - Streamline operations
 - Enhance user experience
-- Provide bilingual support if applicable (Cristian Digital Studio offers bilingual support)`,
+- Provide bilingual support if applicable (Flowrs Digital Studio offers full bilingual support in English and Spanish)`,
 });
 
 const aiWebsiteFeatureSuggesterFlow = ai.defineFlow(

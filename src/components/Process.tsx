@@ -7,50 +7,50 @@ export function Process() {
   const steps = [
     {
       num: "01",
-      title: "Tell me what you need",
-      description: "We start with a quick call or message to discuss your goals, style, and requirements."
+      title: "Tell me your goals",
+      description: "A quick message or call to discuss your business needs and requirements."
     },
     {
       num: "02",
-      title: "I build the first version fast",
-      description: "Within days, you'll see a working prototype of your site that we can start testing."
+      title: "Fast Prototyping",
+      description: "I build the first version of your site in days, not weeks, so you can see results fast."
     },
     {
       num: "03",
-      title: "We refine and polish",
-      description: "Based on your feedback, I make adjustments until every detail is absolutely perfect."
+      title: "Refine & Polished",
+      description: "We tweak the design and content until it perfectly represents your brand."
     },
     {
       num: "04",
-      title: "Your site goes live",
-      description: "I handle the deployment and setup, ensuring your site is fast, secure, and ready for customers."
+      title: "Live & Launch",
+      description: "Your site goes live, fully optimized and ready to start generating new leads."
     }
   ];
 
   return (
-    <section id="process" className="py-24 bg-[#0d0e12] relative overflow-hidden">
+    <section id="process" className="py-32 bg-[#0d0e12] relative overflow-hidden">
       <div className="absolute top-0 right-0 w-full h-full bg-glow opacity-30 pointer-events-none" />
       
       <div className="container mx-auto px-6 relative z-10">
-        <div className="text-center mb-16">
-          <h2 className="font-headline font-bold text-4xl md:text-5xl mb-4">How it works</h2>
-          <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-            A simple, streamlined process designed to get your business online without the headaches.
+        <div className="text-center mb-20">
+          <h2 className="font-headline font-bold text-4xl md:text-6xl mb-6">How it works</h2>
+          <p className="text-muted-foreground text-xl max-w-2xl mx-auto">
+            A simple, high-speed process designed to get your business online with zero headaches.
           </p>
         </div>
 
-        <div className="grid md:grid-cols-4 gap-8">
+        <div className="grid md:grid-cols-4 gap-12">
           {steps.map((step, index) => (
             <div key={index} className="relative group">
               {index < steps.length - 1 && (
-                <div className="hidden md:block absolute top-10 left-full w-full h-[1px] bg-gradient-to-r from-white/10 to-transparent z-0" />
+                <div className="hidden md:block absolute top-12 left-full w-full h-[2px] bg-gradient-to-r from-white/10 to-transparent z-0" />
               )}
               <div className="relative z-10">
-                <div className="text-5xl font-headline font-bold text-white/5 mb-6 group-hover:text-primary/20 transition-colors duration-500">
+                <div className="text-6xl font-headline font-bold text-white/5 mb-8 group-hover:text-primary/30 transition-all duration-700">
                   {step.num}
                 </div>
-                <h3 className="font-headline text-xl font-bold mb-4">{step.title}</h3>
-                <p className="text-muted-foreground leading-relaxed">
+                <h3 className="font-headline text-2xl font-bold mb-4">{step.title}</h3>
+                <p className="text-muted-foreground text-lg leading-relaxed">
                   {step.description}
                 </p>
               </div>
