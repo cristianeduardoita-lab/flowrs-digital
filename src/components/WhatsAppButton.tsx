@@ -6,7 +6,7 @@ import { cn } from '@/lib/utils';
 
 export function WhatsAppButton() {
   const { t } = useLanguage();
-  const phoneNumber = "1234567890"; // Placeholder as requested
+  const phoneNumber = "15072306024";
   const message = encodeURIComponent(t('whatsapp.message'));
   const whatsappUrl = `https://wa.me/${phoneNumber}?text=${message}`;
 

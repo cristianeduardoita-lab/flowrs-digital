@@ -195,6 +195,8 @@ const translations: Record<Language, any> = {
     contact: {
       title: "Let's build something great.",
       desc: "Ready to take your business to the next level? Fill out the form below and I'll get back to you with a professional plan.",
+      quickQuote: "Text or message me directly for a quick quote.",
+      directContact: "Direct Contact",
       steps: [
         { title: "Expert Consultation", desc: "Free 15-minute discovery call to explore your project and goals." },
         { title: "Fast Proposals", desc: "Receive a detailed quote and timeline within 24 hours of our talk." }
@@ -367,6 +369,8 @@ const translations: Record<Language, any> = {
     contact: {
       title: "Construyamos algo grande.",
       desc: "Si estás listo para llevar tu negocio al siguiente nivel, llena el formulario y te contactaré con un plan profesional.",
+      quickQuote: "Envíame un mensaje directo para una cotización rápida.",
+      directContact: "Contacto Directo",
       steps: [
         { title: "Consulta Experta", desc: "Llamada gratuita de 15 minutos para explorar tu proyecto y objetivos." },
         { title: "Propuestas Rápidas", desc: "Recibe una cotización detallada y cronograma en menos de 24 horas." }

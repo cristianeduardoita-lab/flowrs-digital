@@ -1,10 +1,9 @@
-
 "use client";
 
 import React, { useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import { Github, Twitter, Linkedin, Instagram, ArrowUp } from 'lucide-react';
+import { Github, Twitter, Linkedin, Instagram, ArrowUp, Phone, Mail } from 'lucide-react';
 import { useLanguage } from '@/context/LanguageContext';
 
 export function Footer() {
@@ -86,8 +85,18 @@ export function Footer() {
           <div>
             <h4 className="font-headline font-bold text-lg md:text-xl mb-6 md:mb-8">{t('footer.contactTitle')}</h4>
             <ul className="space-y-4 md:space-y-5 text-muted-foreground text-base md:text-lg">
-              <li className="hover:text-white transition-colors cursor-pointer break-all">hello@flowrs.digital</li>
-              <li className="hover:text-white transition-colors cursor-pointer">+1 (555) 123-4567</li>
+              <li className="flex items-center gap-3">
+                <Mail size={18} className="text-secondary" />
+                <a href="mailto:flowrsdigital@gmail.com" className="hover:text-white transition-colors break-all">
+                  flowrsdigital@gmail.com
+                </a>
+              </li>
+              <li className="flex items-center gap-3">
+                <Phone size={18} className="text-secondary" />
+                <a href="tel:15072306024" className="hover:text-white transition-colors">
+                  (507) 230-6024
+                </a>
+              </li>
               <li>{t('footer.available')}</li>
               <li className="text-secondary font-bold">{t('footer.support')}</li>
             </ul>

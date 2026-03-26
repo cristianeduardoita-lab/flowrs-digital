@@ -1,17 +1,20 @@
-
 "use client";
 
 import React from 'react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
-import { Send, CheckCircle } from 'lucide-react';
+import { Send, CheckCircle, Phone, MessageSquare, Mail } from 'lucide-react';
 import { toast } from '@/hooks/use-toast';
 import { useLanguage } from '@/context/LanguageContext';
 
 export function ContactForm() {
   const [isSubmitted, setIsSubmitted] = React.useState(false);
   const { t } = useLanguage();
+
+  const phoneNumber = "15072306024";
+  const whatsappMessage = encodeURIComponent(t('whatsapp.message'));
+  const whatsappUrl = `https://wa.me/${phoneNumber}?text=${whatsappMessage}`;
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -58,8 +61,16 @@ export function ContactForm() {
             <p className="text-muted-foreground text-lg md:text-xl mb-10 md:mb-12 leading-relaxed">
               {t('contact.desc')}
             </p>
+
+            {/* Quick Quote Highlight */}
+            <div className="mb-12 p-6 rounded-2xl bg-primary/5 border border-primary/10 inline-block">
+              <p className="text-primary font-bold text-lg flex items-center gap-3">
+                <MessageSquare className="animate-pulse" size={20} />
+                {t('contact.quickQuote')}
+              </p>
+            </div>
             
-            <div className="space-y-8 md:space-y-10">
+            <div className="space-y-8 md:space-y-10 mb-12">
               {t('contact.steps').map((step: any, idx: number) => (
                 <div key={idx} className="flex gap-6 md:gap-8 group">
                   <div className="w-12 h-12 md:w-14 md:h-14 rounded-full bg-white/5 border border-white/10 flex items-center justify-center shrink-0 group-hover:bg-primary/20 transition-colors">
@@ -71,6 +82,27 @@ export function ContactForm() {
                   </div>
                 </div>
               ))}
+            </div>
+
+            {/* Direct Contact Options */}
+            <div className="pt-8 border-t border-white/5 space-y-4">
+              <h4 className="font-headline font-bold text-xl mb-4 text-white/50 uppercase tracking-widest text-sm">
+                {t('contact.directContact')}
+              </h4>
+              <div className="flex flex-wrap gap-4 md:gap-8">
+                <a href={`tel:${phoneNumber}`} className="flex items-center gap-3 text-lg md:text-xl font-bold hover:text-primary transition-colors">
+                  <Phone size={20} className="text-secondary" />
+                  (507) 230-6024
+                </a>
+                <a href={whatsappUrl} target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 text-lg md:text-xl font-bold hover:text-primary transition-colors">
+                  <MessageSquare size={20} className="text-[#25D366]" />
+                  WhatsApp
+                </a>
+                <a href="mailto:flowrsdigital@gmail.com" className="flex items-center gap-3 text-lg md:text-xl font-bold hover:text-primary transition-colors">
+                  <Mail size={20} className="text-secondary" />
+                  flowrsdigital@gmail.com
+                </a>
+              </div>
             </div>
           </div>
 
