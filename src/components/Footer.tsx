@@ -1,8 +1,8 @@
-
 "use client";
 
 import React from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { Github, Twitter, Linkedin, Instagram, ArrowUp } from 'lucide-react';
 import { useLanguage } from '@/context/LanguageContext';
 
@@ -28,9 +28,15 @@ export function Footer() {
       <div className="container mx-auto px-6">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12 md:gap-16 mb-16 md:mb-24">
           <div className="sm:col-span-2 space-y-6 md:space-y-8">
-            <Link href="/" className="flex items-center gap-3">
-              <div className="w-10 h-10 md:w-12 md:h-12 rounded-xl bg-gradient-to-br from-primary to-secondary flex items-center justify-center text-white font-bold text-xl md:text-2xl shadow-xl shadow-primary/20">
-                F
+            <Link href="/" className="flex items-center gap-3 group">
+              <div className="relative h-10 w-10 md:h-12 md:w-12 group-hover:scale-105 transition-transform duration-300">
+                <Image
+                  src="/logo.png"
+                  alt="Flowrs Digital Studio Logo"
+                  width={48}
+                  height={48}
+                  className="object-contain w-full h-full"
+                />
               </div>
               <span className="font-headline font-bold text-2xl md:text-3xl">
                 Flowrs Digital <span className="text-secondary">Studio</span>

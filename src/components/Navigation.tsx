@@ -1,4 +1,3 @@
-
 "use client";
 
 import React, { useState, useEffect } from 'react';
@@ -8,7 +7,6 @@ import { Menu, X, Globe } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { Button } from '@/components/ui/button';
 import { useLanguage } from '@/context/LanguageContext';
-import { PlaceHolderImages } from '@/lib/placeholder-images';
 
 export function Navigation() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -38,10 +36,16 @@ export function Navigation() {
       )}
     >
       <div className="max-w-7xl mx-auto flex items-center justify-between">
-        <Link href="/" className="flex items-center gap-3 group">
-          <div className="relative w-8 h-8 md:w-10 md:h-10 rounded-xl bg-gradient-to-br from-primary to-secondary flex items-center justify-center overflow-hidden shadow-lg shadow-primary/20 group-hover:scale-110 transition-transform">
-            {/* Placeholder for real logo */}
-            <span className="text-white font-bold text-lg">F</span>
+        <Link href="/" className="flex items-center gap-3 group transition-all">
+          <div className="relative h-8 w-8 md:h-10 md:w-10 group-hover:scale-105 transition-transform duration-300">
+            <Image
+              src="/logo.png"
+              alt="Flowrs Digital Studio Logo"
+              width={40}
+              height={40}
+              className="object-contain w-full h-full"
+              priority
+            />
           </div>
           <span className="font-headline font-bold text-lg md:text-xl tracking-tight hidden sm:inline-block">
             Flowrs Digital <span className="text-secondary">Studio</span>
